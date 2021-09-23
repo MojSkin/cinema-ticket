@@ -2438,6 +2438,10 @@ __webpack_require__.r(__webpack_exports__);
       if (!this.loading) {
         this.loading = true;
         var token = this.$helpers.getToken();
+        console.log({
+          seat_id: seat_id,
+          movie_id: this.movie.id
+        });
         axios.post(this.routes.book, {
           seat_id: seat_id,
           movie_id: this.movie.id

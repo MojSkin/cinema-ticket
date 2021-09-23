@@ -67,6 +67,7 @@ export default {
             if (!this.loading) {
                 this.loading = true
                 let token = this.$helpers.getToken()
+                console.log({seat_id: seat_id, movie_id: this.movie.id})
                 axios.post(this.routes.book, {seat_id: seat_id, movie_id: this.movie.id}, { headers: {"Authorization" : `Bearer ${token}`} }).then(res => {
                     if (res && res.data) {
                         if (res.data.status) {
