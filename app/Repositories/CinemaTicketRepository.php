@@ -21,7 +21,7 @@ class CinemaTicketRepository implements CinemaTicketRepositoryInterface
     }
 
     public function get() {
-        return $this->model->all();
+        return $this->model->get();
     }
 
     public function with($relations) {
