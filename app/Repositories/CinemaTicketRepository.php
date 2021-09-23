@@ -12,8 +12,15 @@ class CinemaTicketRepository implements CinemaTicketRepositoryInterface
     private $baseModel;
 
     public function __construct($model) {
+        $this->setModel($model);
+    }
+
+    public function setModel($model) {
         $this->model = $model;
         $this->baseModel = $model;
+    }
+    public function getModel() {
+        return $this->baseModel;
     }
 
     public function all() {

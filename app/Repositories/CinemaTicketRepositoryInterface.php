@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 interface CinemaTicketRepositoryInterface
 {
+    public function setModel($model);
+    public function getModel();
     public function all();
     public function get();
     public function with($relations);
