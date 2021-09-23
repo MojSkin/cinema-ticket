@@ -19,6 +19,7 @@ class CinemaTicketRepository implements CinemaTicketRepositoryInterface
         $this->model = $model;
         $this->baseModel = $model;
     }
+
     public function getModel() {
         return $this->baseModel;
     }
@@ -65,15 +66,5 @@ class CinemaTicketRepository implements CinemaTicketRepositoryInterface
 
     public function delete($id){
         return $this->model->delete();
-    }
-
-    public function getMovie($id) {
-        $movie = Movie::whereid($id)->with('tickets')->first();
-
-        if (!$movie) {
-            abort(404);
-        }
-
-        return $movie;
     }
 }
